@@ -18,7 +18,6 @@ class Calculator:
         self.records = []
 
     def add_record(self, record):
-        self.record = record
         self.records.append(record)
 
     def get_today_stats(self):
