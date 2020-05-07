@@ -44,14 +44,13 @@ class CashCalculator(Calculator):
         super().__init__(limit)
 
     def get_today_cash_remained(self, currency):
-        self.currency = currency
         today_cash = self.limit - self.get_today_stats()
-        if self.currency == "rub":
+        if currency == "rub":
             val = 'руб'
-        elif self.currency == "usd":
+        elif currency == "usd":
             today_cash = round(today_cash / self.USD_RATE, 2)
             val = 'USD'
-        elif self.currency == "eur":
+        elif currency == "eur":
             today_cash = round(today_cash / self.EURO_RATE, 2)
             val = 'Euro'
         if today_cash == 0:
